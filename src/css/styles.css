@@ -1,0 +1,268 @@
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.nav-bar {
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        margin-bottom: 60px;
+        padding: 24px;
+        font-family: var(--secondary-font);
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    nav li {
+        list-style: none;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--tertiary-color);
+        font-size: 16px;
+        padding: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-right: 4px solid transparent;
+    }
+
+    nav li:hover {
+        background: rgba(0, 229, 255, 0.05);
+    }
+
+    nav li i {
+        font-size: 24px;
+        margin-right: 6px;
+    }
+
+    nav li.active {
+        color: var(--secondary-color);
+        border-right: 4px solid var(--secondary-color);
+        background: rgba(0, 229, 255, 0.1);
+    }
+}
+
+.clock-container {
+    width: calc(100vw - 250px);
+    height: 100%;
+
+    .clock-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .watch.active {
+            display: flex;
+        }
+
+        .watch {
+            display: none;
+        }
+
+        .clock {
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 8px;
+            border-radius: 30px;
+            border: none;
+
+            .time {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+
+                h2 {
+                    font-size: 256px;
+                    letter-spacing: -10px;
+                    font-family: var(--secondary-font);
+                }
+
+                span {
+                    color: var(--secondary-color);
+                    font-size: 96px;
+                    font-weight: 100;
+                    letter-spacing: -10px;
+                    position: relative;
+                    bottom: 100px;
+                    font-family: var(--secondary-font);
+                }
+            }
+
+            .date {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+                position: relative;
+                right: 40px;
+
+                h2 {
+                    font-size: 32px;
+                    letter-spacing: 12px;
+                    font-weight: 400;
+                }
+
+                span {
+                    font-size: 24px;
+                    color: var(--secondary-color);
+                }
+            }
+        }
+
+        .world {
+            display: none;
+            flex-direction: column;
+            padding: 18px;
+            gap: 30px;
+
+            .title {
+                display: flex;
+                flex-direction: column;
+
+                .world-title {
+                    font-size: 128px;
+
+                    span {
+                        color: var(--secondary-color);
+                        text-shadow: 0 0 2px var(--secondary-color);
+                    }
+                }
+
+                .world-subtitle {
+                    display: flex;
+                    align-items: center;
+
+                    span {
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 50%;
+                        background: var(--secondary-color);
+                        display: inline-block;
+                        margin-right: 6px;
+                    }
+
+                    font-size: 16px;
+                    margin-left: 10px;
+                    color: rgb(255, 255, 255, 0.6);
+                    letter-spacing: 2px;
+                }
+            }
+
+            .box-world {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                margin-top: 56px;
+
+                .city-name {
+                    display: flex;
+                    flex-direction: column;
+                    height: calc(100vh - 300px);
+                    padding: 24px;
+                    background-color: var(--bg-color);
+                    border-radius: 5px;
+
+                    .city-info {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .info-name {
+                            h2 {
+                                font-size: 56px;
+                                font-family: var(--secondary-font);
+                                margin-bottom: -5px;
+                            }
+
+                            div {
+                                display: flex;
+                                align-items: center;
+                                gap: 12px;
+                                color: rgb(255, 255, 255, 0.6);
+                                font-size: 16px;
+                                Letter-spacing: 2px;
+
+                                p {
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+
+                        .world-flag {
+                            i {
+                                font-size: 256px;
+                                color: var(--tertiary-color);
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+
+                    .city-info2 {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-top: auto;
+
+                        .city-time {
+                            display: flex;
+                            align-items: center;
+                            gap: 12px;
+                            position: relative;
+                            top: 45px;
+
+                            h3 {
+                                font-size: 200px;
+                                letter-spacing: -10px;
+                                color: rgb(255, 255, 255, 0.9);
+                                font-family: var(--secondary-font);
+                            }
+
+                            span {
+                                color: var(--secondary-color);
+                                font-size: 32px;
+                                font-weight: bold;
+                                position: relative;
+                                top: 58px;
+                            }
+                        }
+
+                        .city-temp {
+                            display: flex;
+                            align-items: center;
+                            gap: 12px;
+                            margin-top: 0;
+                            position: relative;
+                            top: 41px;
+
+                            h3 {
+                                font-size: 96px;
+                                letter-spacing: -10px;
+                                color: rgb(255, 255, 255, 0.9);
+                                font-family: var(--secondary-font);
+                            }
+
+                            span {
+                                color: var(--secondary-color);
+                                font-size: 32px;
+                                font-weight: bold;
+                                position: relative;
+                                top: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
