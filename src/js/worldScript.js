@@ -9,6 +9,7 @@ const cityCountry = document.getElementById('city_country');
 
 const getWeather = async (cityToSearch) => {
     const city = cityToSearch || document.getElementById('cityInput').value.trim();
+    const input = document.getElementById('cityInput');
 
     if(!city) {
         return;
@@ -34,6 +35,7 @@ const getWeather = async (cityToSearch) => {
         
     } catch (error) {
         console.error('Error:', error);
+        input.classList.add('error');
     }
 }
 
@@ -45,7 +47,9 @@ function showResults(data) {
     cityGmt.textContent = data.location.tz_id;
     cityCountry.textContent = data.location.country;
 
-    document.querySelector('.cityInput').value = '';
+    const input = document.getElementById('cityInput');
+    input.value = '';
+    input.classList.remove('error');
 }
 
 function formatHours(datetime) {
