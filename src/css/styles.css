@@ -52,6 +52,8 @@
     position: relative;
     bottom: 100px;
     font-family: var(--secondary-font);
+    width: 100px;
+    height: 100px;
 }
 
 .clock .date {
@@ -170,19 +172,6 @@
     font-weight: bold;
 }
 
-.alarm-time-box .seconds {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top: 75px;
-}
-
-.alarm-time-box .alarm-time-second {
-    font-size: 48px;
-    color: var(--secondary-color);
-    font-family: var(--secondary-font);
-}
-
 .alarm-time-box .span-seconds {
     font-family: var(--secondary-font);
     opacity: 0.8;
@@ -224,7 +213,7 @@
     transform: translateY(-2px);
 }
 
-.alarm-card .alarm-hour {
+.alarm-card .alarm-minute {
     font-size: 16px;
     font-family: var(--secondary-font);
     opacity: 0.9;

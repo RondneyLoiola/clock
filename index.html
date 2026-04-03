@@ -55,13 +55,13 @@
                     <!-- Clock Section (Home) -->
                     <section class="watch clock active" aria-label="Relógio principal">
                         <div class="time">
-                            <h2 class="time-hour" aria-label="Horas e minutos">20:47</h2>
-                            <span class="time-second" aria-label="Segundos">32</span>
+                            <h2 id="time_hour" class="time-hour" aria-label="Horas e minutos">20:47</h2>
+                            <span id="time_second" class="time-second" aria-label="Segundos">32</span>
                         </div>
 
                         <div class="date">
-                            <h2 class="date-day">THURSDAY</h2>
-                            <time class="date-month" datetime="2026-05-05">May 5, 2026</time>
+                            <h2 id="date_day" class="date-day">THURSDAY</h2>
+                            <time id="date_month" class="date-month" datetime="2026-05-05">May 5, 2026</time>
                         </div>
                     </section>
 
@@ -74,13 +74,9 @@
                             </div>
 
                             <div class="alarm-time-box" role="timer" aria-label="Configuração de alarme">
-                                <h3 class="alarm-time-hour" aria-label="Horas">15</h3>
+                                <h3 class="alarm-time-minute" aria-label="Minutes">15</h3>
                                 <span class="alarm-time" aria-hidden="true">:</span>
-                                <h3 class="alarm-time-hour" aria-label="Minutos">00</h3>
-                                <div class="seconds">
-                                    <span class="alarm-time-second" aria-label="Segundos">00</span>
-                                    <span class="span-seconds" aria-hidden="true">SECONDS</span>
-                                </div>
+                                <h3 class="alarm-time-second" aria-label="Seconds">00</h3>
                             </div>
                             <div class="buttons">
                                 <!-- <div class="input-box">
@@ -98,25 +94,25 @@
 
                             <article class="alarm-card" role="button" tabindex="0"
                                 aria-label="Alarme de 5 minutos para Focus Sprint">
-                                <h4 class="alarm-hour">05:00</h4>
+                                <h4 class="alarm-minute">05:00</h4>
                                 <span class="alarm-name">Focus Sprint</span>
                             </article>
 
                             <article class="alarm-card" role="button" tabindex="0"
                                 aria-label="Alarme de 15 minutos para Meditation">
-                                <h4 class="alarm-hour">15:00</h4>
+                                <h4 class="alarm-minute">15:00</h4>
                                 <span class="alarm-name">Meditation</span>
                             </article>
 
                             <article class="alarm-card" role="button" tabindex="0"
                                 aria-label="Alarme de 20 minutos para Review">
-                                <h4 class="alarm-hour">20:00</h4>
+                                <h4 class="alarm-minute">20:00</h4>
                                 <span class="alarm-name">Review</span>
                             </article>
 
                             <article class="alarm-card" role="button" tabindex="0"
                                 aria-label="Alarme de 45 minutos para Deep Work">
-                                <h4 class="alarm-hour">45:00</h4>
+                                <h4 class="alarm-minute">45:00</h4>
                                 <span class="alarm-name">Deep Work</span>
                             </article>
                         </div>
@@ -130,7 +126,7 @@
                                     <span aria-hidden="true"></span>
                                     Active Session
                                 </p>
-                                <h2 aria-label="Tempo do cronômetro" role="timer">00:00:00</h2>
+                                <h2 class="timer-value" aria-label="Tempo do cronômetro" role="timer">00:00:00</h2>
 
                                 <div class="timer-buttons" role="group" aria-label="Controles do cronômetro">
                                     <button type="button" class="btn-start" aria-label="Iniciar cronômetro">
@@ -197,7 +193,10 @@
     </div>
 
     <script src="./src/js/navBar.js"></script>
-    <script src="./src/js/script.js"></script>
+    <script src="./src/js/homeScript.js"></script>
+    <script src="./src/js/alarmScript.js"></script>
+    <script src="./src/js/homeScript.js"></script>
+    <script src="./src/js/homeScript.js"></script>
 </body>
 
 </html>
