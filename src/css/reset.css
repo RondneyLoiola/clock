@@ -1,22 +1,35 @@
 :root {
-    --primary-color: rgb(255, 255, 255);
-    --secondary-color: rgb(0, 229, 255);
-    --tertiary-color: rgb(96, 123, 139);
-
+    --primary-color: #FFFFFF;
+    --secondary-color: #00E5FF;
+    --tertiary-color: #607B8B;
     --bg-color: #191A1A;
-
+    --bg-dark: #0A0A0A;
+    --bg-card: #1F2020;
+    --bg-alarm-button: #00424B;
+    
     --primary-font: 'Roboto', sans-serif;
     --secondary-font: 'Space Grotesk', serif;
+    
+    --border-radius-sm: 5px;
+    --border-radius-md: 7px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 30px;
+    
+    --transition-default: all 0.3s ease;
+    --spacing-sm: 12px;
+    --spacing-md: 24px;
+    --spacing-lg: 30px;
+    --spacing-xl: 60px;
 }
-
+ 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: var(--primary-font);
 }
-
+ 
 body {
-    background-color: #0A0A0A;
+    background-color: var(--bg-dark);
     color: var(--primary-color);
 }

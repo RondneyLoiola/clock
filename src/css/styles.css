@@ -3,501 +3,467 @@
     height: 100vh;
 }
 
-.nav-bar {
-    width: 250px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-
-    h2 {
-        margin-bottom: 60px;
-        padding: 24px;
-        font-family: var(--secondary-font);
-    }
-
-    nav {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    nav li {
-        list-style: none;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        color: var(--tertiary-color);
-        font-size: 16px;
-        padding: 24px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border-right: 4px solid transparent;
-    }
-
-    nav li:hover {
-        background: rgba(0, 229, 255, 0.05);
-    }
-
-    nav li i {
-        font-size: 24px;
-        margin-right: 6px;
-    }
-
-    nav li.active {
-        color: var(--secondary-color);
-        border-right: 4px solid var(--secondary-color);
-        background: rgba(0, 229, 255, 0.1);
-    }
-}
-
 .clock-container {
     width: calc(100vw - 250px);
     height: 100%;
+}
 
-    .clock-wrapper {
+.clock-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.watch {
+    display: none;
+}
+
+.watch.active {
+    display: flex;
+}
+
+/* CLOCK */
+.clock {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 8px;
+    border-radius: var(--border-radius-xl);
+}
+
+.clock .time {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.clock .time h2 {
+    font-size: 256px;
+    letter-spacing: -10px;
+    font-family: var(--secondary-font);
+}
+
+.clock .time span {
+    color: var(--secondary-color);
+    font-size: 96px;
+    font-weight: 100;
+    letter-spacing: -10px;
+    position: relative;
+    bottom: 100px;
+    font-family: var(--secondary-font);
+}
+
+.clock .date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    position: relative;
+    right: 40px;
+}
+
+.clock .date h2 {
+    font-size: 30px;
+    letter-spacing: 12px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+}
+
+.clock .date span {
+    font-size: 24px;
+    color: var(--secondary-color);
+}
+
+/* ALARM */
+.alarm {
+    height: 100vh;
+    padding: var(--spacing-md);
+}
+
+.alarm-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.alarm-title p {
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+    letter-spacing: 5px;
+}
+
+.alarm-title h2 {
+    font-size: 96px;
+    font-family: var(--secondary-font);
+    font-weight: bold;
+    letter-spacing: -10px;
+    opacity: 0.9;
+}
+
+.alarm-title .buttons {
+    width: calc(100% - 80px);
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+    margin-top: 40px;
+
+    .input-box {
         display: flex;
-        flex-direction: column;
-        gap: 30px;
+        align-items: center;
+        gap: var(--spacing-sm);
 
-        .watch.active {
-            display: flex;
-        }
-
-        .watch {
-            display: none;
-        }
-
-        .clock {
-            height: 100vh;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 8px;
-            border-radius: 30px;
+        input {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--border-radius-md);
             border: none;
-
-            .time {
-                display: flex;
-                align-items: center;
-                gap: 12px;
-
-                h2 {
-                    font-size: 256px;
-                    letter-spacing: -10px;
-                    font-family: var(--secondary-font);
-                }
-
-                span {
-                    color: var(--secondary-color);
-                    font-size: 96px;
-                    font-weight: 100;
-                    letter-spacing: -10px;
-                    position: relative;
-                    bottom: 100px;
-                    font-family: var(--secondary-font);
-                }
-            }
-
-            .date {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 12px;
-                position: relative;
-                right: 40px;
-
-                h2 {
-                    font-size: 32px;
-                    letter-spacing: 12px;
-                    font-weight: 400;
-                }
-
-                span {
-                    font-size: 24px;
-                    color: var(--secondary-color);
-                }
-            }
+            background: #1F2020;
+            color: var(--secondary-color);
+            font-size: 24px;
+            text-align: center;
+            font-family: var(--secondary-font);
+            outline: none;
         }
-
-        .alarm {
-            height: 100vh;
-            padding: 24px;
-
-            .alarm-title {
-                display: flex;
-                align-items: start;
-                flex-direction: column;
-                justify-content: space-between;
-                width: 100%;
-
-                p {
-                    color: var(--secondary-color);
-                    font-family: var(--secondary-font);
-                    letter-spacing: 5px;
-                }
-
-                h2 {
-                    font-size: 96px;
-                    font-family: var(--secondary-font);
-                    opacity: 0.9;
-                    font-weight: bold;
-                    letter-spacing: -10px
-                }
-
-                .alarm-time-box {
-                    display: flex;
-                    align-items: center;
-                    gap: 12px;
-
-                    h2 {
-                        font-size: 256px;
-                        font-family: var(--secondary-font);
-                        font-weight: 100;
-                        letter-spacing: -10px
-                    }
-
-                    .alarm-time {
-                        color: var(--secondary-color);
-                        opacity: 0.9;
-                        font-size: 200px;
-                        font-weight: bold;
-                    }
-
-                    .seconds {
-                        display: flex;
-                        flex-direction: column;
-                        position: relative;
-                        top: 75px;
-
-
-                        .alarm-time-second {
-                            font-size: 48px;
-                            color: var(--secondary-color);
-                            font-family: var(--secondary-font);
-                        }
-
-                        .span-seconds {
-                            font-family: var(--secondary-font);
-                            opacity: .8;
-                            letter-spacing: 1px;
-                        }
-                    }
-
-                    .buttons {
-                        margin-left: 120px;
-                        
-                        button {
-                            background-color: #00424B;
-                            color: var(--secondary-color);
-                            border: none;
-                            width: 100px;
-                            height: 100px;
-                            border-radius: 7px;
-
-                            i {
-                                font-size: 24px;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .alarms-card {
-                margin-top: 60px;
-                display: flex;
-                flex-direction: column;
-                gap: 30px;
-                padding: 24px;
-                height: 650px;
-                background: #191A1A;
-                border-radius: 12px;
-                width: 500px;
-                
-                h3 {
-                    margin-bottom: 40px;
-                    opacity: 0.8;
-                    font-weight: 200;
-                }
-
-                .alarm-card {
-                    display: flex;
-                    flex-direction: column-reverse;
-                    justify-content: center;
-                    align-items: start;
-                    padding: 24px 12px;
-                    border-radius: 12px;
-                    background: #1F2020;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-
-                    .alarm-hour {
-                        font-size: 16px;
-                        font-family: var(--secondary-font);
-                        opacity: 0.9;
-                        color: var(--secondary-color);
-                    }
-
-                    .alarm-name {
-                        font-size: 24px;
-                        font-family: var(--secondary-font);
-                    }
-                }
-            }
-        }
-
-        .timer {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 18px;
-            gap: 30px;
-
-            .timer-box {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: calc(100vh - 300px);
-
-                .timer-time {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 12px;
-
-                    p {
-                        color: var(--secondary-color);
-                        display: flex;
-                        align-items: center;
-
-                        span {
-                            width: 7px;
-                            height: 7px;
-                            border-radius: 50%;
-                            background: var(--secondary-color);
-                            display: inline-block;
-                            margin-right: 7px;
-                        }
-                    }
-
-                    h2 {
-                        font-size: 240px;
-                        letter-spacing: -7px;
-                        font-family: var(--secondary-font);
-                    }
-
-                    .timer-buttons {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 12px;
-
-                        button {
-                            display: flex;
-                            align-items: center;
-
-                            i {
-                                font-size: 16px;
-                                margin-right: 5px;
-                            }
-                        }
-
-                        .btn-start {
-                            background: transparent;
-                            padding: 10px 28px;
-                            border-radius: 5px;
-                            border: 1px solid rgb(255, 255, 255, 0.5);
-                            color: var(--primary-color);
-                            font-size: 24px;
-                            font-weight: bold;
-                            cursor: pointer;
-
-                            &:hover {
-                                background: rgba(0, 229, 255, 0.1);
-                                color: var(--secondary-color);
-                            }
-                        }
-
-                        .btn-pause {
-                            background: transparent;
-                            padding: 10px 28px;
-                            border-radius: 5px;
-                            border: 1px solid rgb(255, 255, 255, 0.5);
-                            color: var(--primary-color);
-                            font-size: 24px;
-                            font-weight: bold;
-                            cursor: pointer;
-
-                            &:hover {
-                                background: rgba(0, 229, 255, 0.1);
-                            }
-                        }
-
-                        .btn-reset {
-                            background: transparent;
-                            padding: 10px 28px;
-                            border-radius: 5px;
-                            border: 1px solid rgba(255, 0, 0, 0.514);
-                            color: rgba(255, 0, 0);
-                            font-size: 24px;
-                            font-weight: bold;
-                            cursor: pointer;
-
-                            &:hover {
-                                background: rgba(255, 0, 0, 0.1);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        .world {
-            display: none;
-            flex-direction: column;
-            padding: 18px;
-            gap: 30px;
-
-            .title {
-                display: flex;
-                flex-direction: column;
-
-                .world-title {
-                    font-size: 128px;
-
-                    span {
-                        color: var(--secondary-color);
-                        text-shadow: 0 0 2px var(--secondary-color);
-                    }
-                }
-
-                .world-subtitle {
-                    display: flex;
-                    align-items: center;
-
-                    span {
-                        width: 7px;
-                        height: 7px;
-                        border-radius: 50%;
-                        background: var(--secondary-color);
-                        display: inline-block;
-                        margin-right: 6px;
-                    }
-
-                    font-size: 16px;
-                    margin-left: 10px;
-                    color: rgb(255, 255, 255, 0.6);
-                    letter-spacing: 2px;
-                }
-            }
-
-            .box-world {
-                display: flex;
-                flex-direction: column;
-                gap: 30px;
-                margin-top: 56px;
-
-                .city-name {
-                    display: flex;
-                    flex-direction: column;
-                    height: calc(100vh - 300px);
-                    padding: 24px;
-                    background-color: var(--bg-color);
-                    border-radius: 5px;
-
-                    .city-info {
-                        display: flex;
-                        justify-content: space-between;
-
-                        .info-name {
-                            h2 {
-                                font-size: 56px;
-                                font-family: var(--secondary-font);
-                                margin-bottom: -5px;
-                            }
-
-                            div {
-                                display: flex;
-                                align-items: center;
-                                gap: 12px;
-                                color: rgb(255, 255, 255, 0.6);
-                                font-size: 16px;
-                                Letter-spacing: 2px;
-
-                                p {
-                                    font-weight: bold;
-                                }
-                            }
-                        }
-
-                        .world-flag {
-                            i {
-                                font-size: 256px;
-                                color: var(--tertiary-color);
-                                margin-right: 20px;
-                            }
-                        }
-                    }
-
-                    .city-info2 {
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        margin-top: auto;
-
-                        .city-time {
-                            display: flex;
-                            align-items: center;
-                            gap: 12px;
-                            position: relative;
-                            top: 45px;
-
-                            h3 {
-                                font-size: 200px;
-                                letter-spacing: -10px;
-                                color: rgb(255, 255, 255, 0.9);
-                                font-family: var(--secondary-font);
-                            }
-
-                            span {
-                                color: var(--secondary-color);
-                                font-size: 32px;
-                                font-weight: bold;
-                                position: relative;
-                                top: 58px;
-                            }
-                        }
-
-                        .city-temp {
-                            display: flex;
-                            align-items: center;
-                            gap: 12px;
-                            margin-top: 0;
-                            position: relative;
-                            top: 41px;
-
-                            h3 {
-                                font-size: 96px;
-                                letter-spacing: -10px;
-                                color: rgb(255, 255, 255, 0.9);
-                                font-family: var(--secondary-font);
-                            }
-
-                            span {
-                                color: var(--secondary-color);
-                                font-size: 32px;
-                                font-weight: bold;
-                                position: relative;
-                                top: 20px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
     }
+}
+
+.alarm-title .buttons button {
+    background-color: var(--bg-alarm-button);
+    color: var(--secondary-color);
+    border: none;
+    width: 100px;
+    height: 100px;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: var(--transition-default);
+}
+
+.alarm-title .buttons button:hover {
+    opacity: 0.8;
+}
+
+.alarm-title .buttons i {
+    font-size: 24px;
+}
+
+.alarm-time-box {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-xl);
+}
+
+.alarm-time-box h3 {
+    font-size: 256px;
+    font-family: var(--secondary-font);
+    font-weight: 100;
+    letter-spacing: -10px;
+}
+
+.alarm-time-box .alarm-time {
+    color: var(--secondary-color);
+    opacity: 0.9;
+    font-size: 200px;
+    font-weight: bold;
+}
+
+.alarm-time-box .seconds {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 75px;
+}
+
+.alarm-time-box .alarm-time-second {
+    font-size: 48px;
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+}
+
+.alarm-time-box .span-seconds {
+    font-family: var(--secondary-font);
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.alarms-card {
+    margin-top: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+    height: 650px;
+    background: var(--bg-color);
+    border-radius: var(--border-radius-lg);
+    width: 500px;
+}
+
+.alarms-card h3 {
+    margin-bottom: 40px;
+    opacity: 0.8;
+    font-weight: 200;
+}
+
+.alarm-card {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: flex-start;
+    padding: var(--spacing-md) var(--spacing-sm);
+    border-radius: var(--border-radius-lg);
+    background: var(--bg-card);
+    cursor: pointer;
+    transition: var(--transition-default);
+}
+
+.alarm-card:hover {
+    background: rgba(31, 32, 32, 0.8);
+    transform: translateY(-2px);
+}
+
+.alarm-card .alarm-hour {
+    font-size: 16px;
+    font-family: var(--secondary-font);
+    opacity: 0.9;
+    color: var(--secondary-color);
+}
+
+.alarm-card .alarm-name {
+    font-size: 24px;
+    font-family: var(--secondary-font);
+}
+
+/* TIMER */
+.timer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    gap: var(--spacing-lg);
+}
+
+.timer-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 300px);
+}
+
+.timer-time {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.timer-time p {
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+}
+
+.timer-time p span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    display: inline-block;
+    margin-right: 7px;
+}
+
+.timer-time h2 {
+    font-size: 240px;
+    letter-spacing: -7px;
+    font-family: var(--secondary-font);
+}
+
+.timer-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.timer-buttons button {
+    display: flex;
+    align-items: center;
+    padding: 10px 28px;
+    border-radius: var(--border-radius-sm);
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition-default);
+}
+
+.timer-buttons button i {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.timer-buttons .btn-start,
+.timer-buttons .btn-pause {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: var(--primary-color);
+}
+
+.timer-buttons .btn-start:hover {
+    background: rgba(0, 229, 255, 0.1);
+    color: var(--secondary-color);
+}
+
+.timer-buttons .btn-pause:hover {
+    background: rgba(0, 229, 255, 0.1);
+}
+
+.timer-buttons .btn-reset {
+    background: transparent;
+    border: 1px solid rgba(255, 0, 0, 0.514);
+    color: rgba(255, 0, 0);
+}
+
+.timer-buttons .btn-reset:hover {
+    background: rgba(255, 0, 0, 0.1);
+}
+
+/* WORLD CLOCK */
+.world {
+    flex-direction: column;
+    padding: 18px;
+    gap: var(--spacing-lg);
+}
+
+.world .title {
+    display: flex;
+    flex-direction: column;
+}
+
+.world-title {
+    font-size: 128px;
+}
+
+.world-title span {
+    color: var(--secondary-color);
+    text-shadow: 0 0 2px var(--secondary-color);
+}
+
+.world-subtitle {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-left: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 2px;
+}
+
+.world-subtitle span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.box-world {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-top: 56px;
+}
+
+.city-name {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 300px);
+    padding: var(--spacing-md);
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius-sm);
+}
+
+.city-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.city-info .info-name h2 {
+    font-size: 56px;
+    font-family: var(--secondary-font);
+    margin-bottom: -5px;
+}
+
+.city-info .info-name div {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.city-info .info-name div p {
+    font-weight: bold;
+}
+
+.city-info .world-flag i {
+    font-size: 256px;
+    color: var(--tertiary-color);
+    margin-right: 20px;
+}
+
+.city-info2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.city-time {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    position: relative;
+    top: 45px;
+}
+
+.city-time h3 {
+    font-size: 200px;
+    letter-spacing: -10px;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: var(--secondary-font);
+}
+
+.city-time span {
+    color: var(--secondary-color);
+    font-size: 32px;
+    font-weight: bold;
+    position: relative;
+    top: 58px;
+}
+
+.city-temp {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    position: relative;
+    top: 41px;
+}
+
+.city-temp h3 {
+    font-size: 96px;
+    letter-spacing: -10px;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: var(--secondary-font);
+}
+
+.city-temp span {
+    color: var(--secondary-color);
+    font-size: 32px;
+    font-weight: bold;
+    position: relative;
+    top: 20px;
 }

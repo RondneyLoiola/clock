@@ -9,6 +9,7 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/navBar.css">
     <link rel="stylesheet" href="./src/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,147 +22,182 @@
 
 <body>
     <div class="container">
-        <div class="nav-bar">
-            <h2>CHRONOS</h2>
+        <!-- Navigation Sidebar -->
+        <aside class="nav-bar" role="navigation" aria-label="Menu principal">
+            <h1>CHRONOS</h1>
 
             <nav>
-                <ul>
-                    <li class="nav-item active"><i class="fa-solid fa-clock"></i>Home</li>
-                    <li class="nav-item"><i class="fa-solid fa-alarm-clock"></i>Alarm</li>
-                    <li class="nav-item"><i class="fa-solid fa-hourglass"></i>Timer</li>
-                    <li class="nav-item"><i class="fa-solid fa-earth-americas"></i>World Time</li>
+                <ul role="menubar">
+                    <li class="nav-item active" role="menuitem" aria-current="page" tabindex="0">
+                        <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                        <span>Home</span>
+                    </li>
+                    <li class="nav-item" role="menuitem" tabindex="0">
+                        <i class="fa-solid fa-alarm-clock" aria-hidden="true"></i>
+                        <span>Alarm</span>
+                    </li>
+                    <li class="nav-item" role="menuitem" tabindex="0">
+                        <i class="fa-solid fa-hourglass" aria-hidden="true"></i>
+                        <span>Timer</span>
+                    </li>
+                    <li class="nav-item" role="menuitem" tabindex="0">
+                        <i class="fa-solid fa-earth-americas" aria-hidden="true"></i>
+                        <span>World Time</span>
+                    </li>
                 </ul>
             </nav>
-        </div>
+        </aside>
 
-        <main>
+        <!-- Main Content -->
+        <main id="main-content" role="main">
             <div class="clock-container">
                 <div class="clock-wrapper">
-                    <div class="watch clock active">
+                    <!-- Clock Section (Home) -->
+                    <section class="watch clock active" aria-label="Relógio principal">
                         <div class="time">
-                            <h2 class="time-hour">20:47</h2>
-                            <span class="time-second">32</span>
+                            <h2 class="time-hour" aria-label="Horas e minutos">20:47</h2>
+                            <span class="time-second" aria-label="Segundos">32</span>
                         </div>
 
                         <div class="date">
                             <h2 class="date-day">THURSDAY</h2>
-                            <span class="date-month">May 5, 2026</span>
+                            <time class="date-month" datetime="2026-05-05">May 5, 2026</time>
                         </div>
-                    </div>
+                    </section>
 
-                    <div class="watch alarm">
+                    <!-- Alarm Section -->
+                    <section class="watch alarm" aria-label="Seção de alarmes">
                         <div class="alarm-title">
                             <div class="info-name">
                                 <p>PRECISION MODE</p>
                                 <h2>Focus Engine</h2>
                             </div>
 
-                            <div class="alarm-time-box">
-                                <h2 class="alarm-time-hour">15</h2>
-                                <span class="alarm-time">:</span>
-                                <h2 class="alarm-time-hour">00</h2>
+                            <div class="alarm-time-box" role="timer" aria-label="Configuração de alarme">
+                                <h3 class="alarm-time-hour" aria-label="Horas">15</h3>
+                                <span class="alarm-time" aria-hidden="true">:</span>
+                                <h3 class="alarm-time-hour" aria-label="Minutos">00</h3>
                                 <div class="seconds">
-                                    <span class="alarm-time-second">00</span>
-                                    <span class="span-seconds">SECONDS</span>
+                                    <span class="alarm-time-second" aria-label="Segundos">00</span>
+                                    <span class="span-seconds" aria-hidden="true">SECONDS</span>
                                 </div>
-                                <div class="buttons">
-                                    <button><i class="fa-solid fa-play"></i></button>
-                                </div>
+                            </div>
+                            <div class="buttons">
+                                <!-- <div class="input-box">
+                                    <input type="number" max="59">
+                                    <input type="number" max="59">
+                                </div> -->
+                                <button type="button" aria-label="Iniciar alarme">
+                                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                </button>
                             </div>
                         </div>
 
                         <div class="alarms-card">
                             <h3>QUICK PRESETS</h3>
 
-                            <div class="alarm-card">
+                            <article class="alarm-card" role="button" tabindex="0"
+                                aria-label="Alarme de 5 minutos para Focus Sprint">
                                 <h4 class="alarm-hour">05:00</h4>
                                 <span class="alarm-name">Focus Sprint</span>
-                            </div>
+                            </article>
 
-                            <div class="alarm-card">
+                            <article class="alarm-card" role="button" tabindex="0"
+                                aria-label="Alarme de 15 minutos para Meditation">
                                 <h4 class="alarm-hour">15:00</h4>
                                 <span class="alarm-name">Meditation</span>
-                            </div>
+                            </article>
 
-                            <div class="alarm-card">
+                            <article class="alarm-card" role="button" tabindex="0"
+                                aria-label="Alarme de 20 minutos para Review">
                                 <h4 class="alarm-hour">20:00</h4>
                                 <span class="alarm-name">Review</span>
-                            </div>
+                            </article>
 
-                            <div class="alarm-card">
+                            <article class="alarm-card" role="button" tabindex="0"
+                                aria-label="Alarme de 45 minutos para Deep Work">
                                 <h4 class="alarm-hour">45:00</h4>
                                 <span class="alarm-name">Deep Work</span>
-                            </div>
+                            </article>
                         </div>
-                    </div>
+                    </section>
 
-                    <div class="watch timer">
+                    <!-- Timer Section -->
+                    <section class="watch timer" aria-label="Seção de cronômetro">
                         <div class="timer-box">
                             <div class="timer-time">
-                                <p><span></span>Active Session</p>
-                                <h2>00:00:00</h2>
+                                <p class="timer-title">
+                                    <span aria-hidden="true"></span>
+                                    Active Session
+                                </p>
+                                <h2 aria-label="Tempo do cronômetro" role="timer">00:00:00</h2>
 
-                                <div class="timer-buttons">
-                                    <button class="btn-start"><i class="fa-solid fa-play"></i>Start</button>
-                                    <button class="btn-pause"><i class="fa-solid fa-pause"></i>Pause</button>
-                                    <button class="btn-reset"><i
-                                            class="fa-solid fa-arrow-rotate-left"></i>Reset</button>
+                                <div class="timer-buttons" role="group" aria-label="Controles do cronômetro">
+                                    <button type="button" class="btn-start" aria-label="Iniciar cronômetro">
+                                        <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                        <span>Start</span>
+                                    </button>
+                                    <button type="button" class="btn-pause" aria-label="Pausar cronômetro">
+                                        <i class="fa-solid fa-pause" aria-hidden="true"></i>
+                                        <span>Pause</span>
+                                    </button>
+                                    <button type="button" class="btn-reset" aria-label="Resetar cronômetro">
+                                        <i class="fa-solid fa-arrow-rotate-left" aria-hidden="true"></i>
+                                        <span>Reset</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
-                    <div class="watch world">
-                        <div class="title">
+                    <!-- World Clock Section -->
+                    <section class="watch world" aria-label="Relógio mundial">
+                        <header class="title">
                             <h2 class="world-title">World <span>Clock</span></h2>
-                            <p class="world-subtitle"><span></span>SYNCHRONIZED GLOBAL PRECISION</p>
-                        </div>
-
-                        <!-- <div class="city">
-                            <label for="name">City Name</label>
-                            <div>
-                                <input id="name" type="text" placeholder="London" class="world-name">
-                                <button class="btn-search">Search</button>
-                            </div>
-                        </div> -->
+                            <p class="world-subtitle">
+                                <span aria-hidden="true"></span>
+                                SYNCHRONIZED GLOBAL PRECISION
+                            </p>
+                        </header>
 
                         <div class="box-world">
-                            <div class="city-name">
+                            <article class="city-name" aria-label="Informações de Londres">
                                 <div class="city-info">
                                     <div class="info-name">
-                                        <h2>LONDOM</h2>
+                                        <h3>LONDON</h3>
                                         <div>
                                             <p>GMT +00:00</p>
-                                            <p>•</p>
+                                            <p aria-hidden="true">•</p>
                                             <p>UNITED KINGDOM</p>
                                         </div>
                                     </div>
 
-                                    <div class="world-flag">
+                                    <div class="world-flag" aria-hidden="true">
                                         <i class="fa-solid fa-globe"></i>
                                     </div>
                                 </div>
 
                                 <div class="city-info2">
                                     <div class="city-time">
-                                        <h3 class="city-hour">14:42</h3>
+                                        <h3 class="city-hour" aria-label="Hora local">14:42</h3>
                                         <span class="city-second">PM</span>
                                     </div>
 
                                     <div class="city-temp">
-                                        <h3 class="city-temp">24</h3>
+                                        <h3 aria-label="Temperatura">24</h3>
                                         <span>°C</span>
                                     </div>
                                 </div>
-                            </div>
+                            </article>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
         </main>
     </div>
+
+    <script src="./src/js/navBar.js"></script>
+    <script src="./src/js/script.js"></script>
 </body>
-<script src="./src/js/navBar.js"></script>
-<script src="./src/js/script.js"></script>
 
 </html>
