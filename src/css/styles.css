@@ -325,7 +325,7 @@
 .world {
     flex-direction: column;
     padding: 18px;
-    gap: var(--spacing-lg);
+    gap: 20px;
 }
 
 .world .title {
@@ -364,7 +364,6 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
-    margin-top: 56px;
 }
 
 .city-name {
@@ -381,10 +380,11 @@
     justify-content: space-between;
 }
 
-.city-info .info-name h2 {
+.city-info .info-name h3 {
     font-size: 56px;
     font-family: var(--secondary-font);
     margin-bottom: -5px;
+    color: var(--secondary-color);
 }
 
 .city-info .info-name div {
@@ -457,4 +457,39 @@
     font-weight: bold;
     position: relative;
     top: 20px;
+}
+
+.modal-input {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.modal-input input {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: var(--border-radius-sm);
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--secondary-color);
+    font-size: 16px;
+    outline: none;
+}
+
+.modal-input button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--secondary-color);
+    transition: var(--transition-default);
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.modal-input button:hover {
+    background-color: var(--tertiary-color);
 }

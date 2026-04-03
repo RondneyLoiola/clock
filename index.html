@@ -129,15 +129,18 @@
                                 <h2 class="timer-value" aria-label="Tempo do cronômetro" role="timer">00:00:00</h2>
 
                                 <div class="timer-buttons" role="group" aria-label="Controles do cronômetro">
-                                    <button id="btn-start" type="button" class="btn-start" aria-label="Iniciar cronômetro">
+                                    <button id="btn-start" type="button" class="btn-start"
+                                        aria-label="Iniciar cronômetro">
                                         <i class="fa-solid fa-play" aria-hidden="true"></i>
                                         <span>Start</span>
                                     </button>
-                                    <button id="btn-pause" type="button" class="btn-pause" aria-label="Pausar cronômetro">
+                                    <button id="btn-pause" type="button" class="btn-pause"
+                                        aria-label="Pausar cronômetro">
                                         <i class="fa-solid fa-pause" aria-hidden="true"></i>
                                         <span>Pause</span>
                                     </button>
-                                    <button id="btn-reset" type="button" class="btn-reset" aria-label="Resetar cronômetro">
+                                    <button id="btn-reset" type="button" class="btn-reset"
+                                        aria-label="Resetar cronômetro">
                                         <i class="fa-solid fa-arrow-rotate-left" aria-hidden="true"></i>
                                         <span>Reset</span>
                                     </button>
@@ -156,15 +159,21 @@
                             </p>
                         </header>
 
+                        <!-- Modal Input-->
+                        <div class="modal-input">
+                            <input id="cityInput" type="text" placeholder="Search for a city">
+                            <button id="citySearch" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+
                         <div class="box-world">
                             <article class="city-name" aria-label="Informações de Londres">
                                 <div class="city-info">
                                     <div class="info-name">
-                                        <h3>LONDON</h3>
+                                        <h3 id="city_name">LONDON</h3>
                                         <div>
-                                            <p>GMT +00:00</p>
+                                            <p id="city_gmt">Europe/London</p>
                                             <p aria-hidden="true">•</p>
-                                            <p>UNITED KINGDOM</p>
+                                            <p id="city_country">UNITED KINGDOM</p>
                                         </div>
                                     </div>
 
@@ -175,12 +184,12 @@
 
                                 <div class="city-info2">
                                     <div class="city-time">
-                                        <h3 class="city-hour" aria-label="Hora local">14:42</h3>
+                                        <h3 id="city_hour" class="city-hour" aria-label="Hora local">14:42</h3>
                                         <span class="city-second">PM</span>
                                     </div>
 
                                     <div class="city-temp">
-                                        <h3 aria-label="Temperatura">24</h3>
+                                        <h3 id="city_temp" aria-label="Temperatura">24</h3>
                                         <span>°C</span>
                                     </div>
                                 </div>
@@ -196,6 +205,7 @@
     <script src="./src/js/homeScript.js"></script>
     <script src="./src/js/alarmScript.js"></script>
     <script src="./src/js/timerScript.js"></script>
+    <script src="./src/js/worldScript.js"></script>
 </body>
 
 </html>
