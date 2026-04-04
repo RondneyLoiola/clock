@@ -132,6 +132,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 - GitHub: [@RondneyLoiola](https://github.com/RondneyLoiola)
 - Project Link: [https://github.com/RondneyLoiola/clock](https://github.com/RondneyLoiola/clock)
+- Deploy: https://projeto-relogio-nu.vercel.app/
 
 ## 🙏 Acknowledgments
 
