@@ -40,7 +40,6 @@ const getWeather = async (cityToSearch) => {
 }
 
 function showResults(data) {
-    console.log(data)
     cityName.textContent = data.location.name;
     cityTemp.textContent = `${Math.round(data.current.temp_c)}`;
     cityHour.textContent = `${formatHours(data.location.localtime)}`;

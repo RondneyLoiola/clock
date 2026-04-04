@@ -80,8 +80,8 @@ function startAlarm() {
     }
     originalTime = `${min.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}`;
     state = 'running';
-    if (countdownInterval) clearInterval(countdownInterval);
-    countdownInterval = setInterval(countdownTimer, 1000);
+    if (countdownInterval) clearInterval(countdownInterval); // se tiver um contador, limpa
+    countdownInterval = setInterval(countdownTimer, 1000); // inicia o contador
     updateButtons();
 }
 
@@ -108,7 +108,7 @@ function resetAlarm() {
     const [origMin, origSec] = originalTime.split(':').map(Number);
     minute.textContent = origMin.toString().padStart(2, '0');
     second.textContent = origSec.toString().padStart(2, '0');
-    state = 'paused'; // Stay paused after reset
+    state = 'paused'; // pausa depois do reset
     updateButtons();
 }
 
