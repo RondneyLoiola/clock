@@ -9,6 +9,16 @@ let state = 'idle'; // 'idle', 'running', 'paused'
 let originalTime = '00:00';
 let pauseTime = { min: 0, sec: 0 };
 
+function toggleAlarmCardsDisabled(disabled) {
+    alarm_cards.forEach(card => {
+        if (disabled) {
+            card.classList.add('disabled');
+        } else {
+            card.classList.remove('disabled');
+        }
+    });
+}
+
 function countdownTimer() {
     const min = parseInt(minute.textContent);
     const sec = parseInt(second.textContent);
@@ -80,6 +90,7 @@ function startAlarm() {
     }
     originalTime = `${min.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}`;
     state = 'running';
+    toggleAlarmCardsDisabled(true);
     if (countdownInterval) clearInterval(countdownInterval); // se tiver um contador, limpa
     countdownInterval = setInterval(countdownTimer, 1000); // inicia o contador
     updateButtons();
@@ -91,6 +102,7 @@ function pauseAlarm() {
         min: parseInt(minute.textContent),
         sec: parseInt(second.textContent)
     };
+    toggleAlarmCardsDisabled(false);
     if (countdownInterval) {
         clearInterval(countdownInterval);
         countdownInterval = null;
@@ -100,6 +112,7 @@ function pauseAlarm() {
 
 function resumeAlarm() {
     state = 'running';
+    toggleAlarmCardsDisabled(true);
     countdownInterval = setInterval(countdownTimer, 1000);
     updateButtons();
 }
@@ -109,11 +122,13 @@ function resetAlarm() {
     minute.textContent = origMin.toString().padStart(2, '0');
     second.textContent = origSec.toString().padStart(2, '0');
     state = 'paused'; // pausa depois do reset
+    toggleAlarmCardsDisabled(false);
     updateButtons();
 }
 
 function stopAlarm() {
     state = 'idle';
+    toggleAlarmCardsDisabled(false);
     if (countdownInterval) clearInterval(countdownInterval);
     countdownInterval = null;
     isAlarmActive = false;
@@ -126,6 +141,7 @@ function stopAlarm() {
 
 alarm_cards.forEach(card => {
     card.addEventListener('click', () => {
+        if (card.classList.contains('disabled')) return;
         const timeStr = card.querySelector('.alarm-minute').textContent;
         minute.textContent = timeStr.split(':')[0];
         second.textContent = '00';

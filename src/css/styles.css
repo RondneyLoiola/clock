@@ -225,6 +225,16 @@
     font-family: var(--secondary-font);
 }
 
+.alarm-card.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.alarm-card.disabled:hover {
+    background: var(--bg-card);
+    transform: none;
+}
+
 /* TIMER */
 .timer {
     flex-direction: column;
